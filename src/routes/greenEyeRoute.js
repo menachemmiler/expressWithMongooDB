@@ -1,9 +1,15 @@
+const { createNew, reply, my, getPoll, deletePoll } = require('../controllers/greenEyeController');
+
 const router = require('express').Router();
 
-router.post('/', () => {});//create new green Eye
+router.post('/', () => createNew);//create new green Eye
 
-router.get('/my', () => {});//קבלת המצב שלי בנכסל האם עניתי או לא
+router.post('/reply', () => reply);//תגובת משתמש לנכסל
 
-router.get('/:id', () => {});//קבלת מצב של נכסל מסויים לפי מזהה של נכסל (כמה ענו...)
+router.get('/my', () => my);//קבלת המצב שלי בנכסל האם עניתי או לא
+
+router.get('/:id', () => getPoll);//קבלת מצב של נכסל מסויים לפי מזהה של נכסל (כמה ענו...)
+
+router.delete('/:id', () => deletePoll);//מחיקת\ביטול נכסל
 
 module.exports = router;
