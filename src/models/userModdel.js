@@ -33,4 +33,8 @@ const userSchema = new mongoose.Schema({
 });
 
 const UserModel = mongoose.model("user", userSchema);//הגדרת הטבלה\אוסף כולל המבנה שלה
-module.exports = UserModel;
+module.exports = {
+    UserModel,
+    userSchema
+};
+
