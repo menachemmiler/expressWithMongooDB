@@ -4,7 +4,7 @@ const { connectToMongoo } = require("./config/dbConfig");
 
 const app = express();
 dotenv.config();
-connectToMongoo();
+connectToMongoo();//הפעלת הפונקצייה שאחראית על התחברות למסד הנתונים
 
 const port = process.env.PORT || 1415;
 
