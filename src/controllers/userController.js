@@ -1,18 +1,18 @@
-const register = async () => {
+const register = async (req, res) => {
     try{
 
     }catch (err){
         
     }
 }
-const profile = async () => {
+const profile = async (req, res) => {
     try{
 
     }catch (err){
         
     }
 };
-const setingsUpdate = async () => {
+const setingsUpdate = async (req, res) => {
     try{
 
     }catch (err){

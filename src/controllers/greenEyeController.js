@@ -1,32 +1,32 @@
-const createNew = async () => {
+const createNew = async (req, res) => {
     try{
 
     }catch (err){
         
     }
 }
-const reply = async () => {
+const reply = async (req, res) => {
     try{
 
     }catch (err){
         
     }
 };
-const my = async () => {
+const myStatus = async (req, res) => {
     try{
 
     }catch (err){
         
     }
 };
-const getPoll = async () => {
+const getPoll = async (req, res) => {
     try{
 
     }catch (err){
         
     }
 };
-const deletePoll = async () => {
+const deletePoll = async (req, res) => {
     try{
 
     }catch (err){
@@ -37,7 +37,7 @@ const deletePoll = async () => {
 module.exports = {
     createNew,
     reply,
-    my,
+    myStatus,
     getPoll,
     deletePoll
 }
