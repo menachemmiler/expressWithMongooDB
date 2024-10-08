@@ -14,7 +14,7 @@ app.use(express.json());
 app.use(cookieParser());
 
 app.use("/auth", require("./routes/authRoute"));
-app.use("/user", require("./routes/userRoute"));//כל הפעולות שקשורות ל-חייל\מפקד  יתחילו ב
+app.use("/user", require("./routes/userRoute"));//כל הפעולות שקשורות ל-חייל\מפקד  יתחילו ב-/user
 app.use("/greenEye", require("./routes/greenEyeRoute"));
 
 app.listen(port, () => console.log(`server up and runing on port ${port}`));

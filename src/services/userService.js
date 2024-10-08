@@ -22,6 +22,18 @@ const createUser = async (user) => {
   }
 };
 
+const getAllUsers = async () => {
+  try {
+    const allUsers = await UserModel.find({});
+    console.log("allUsers= ", allUsers);
+    return allUsers;
+  } catch (err) {
+    console.log(err);
+    throw err;
+  }
+};
+
 module.exports = {
   createUser,
+  getAllUsers,
 };

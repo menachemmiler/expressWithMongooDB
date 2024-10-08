@@ -1,4 +1,4 @@
-const { createUser } = require("../services/userService");
+const { createUser, getAllUsers } = require("../services/userService");
 
 const register = async (req, res) => {
   try {
@@ -31,8 +31,24 @@ const setingsUpdate = async (req, res) => {
   }
 };
 
+const getAll = async (req, res) => {
+  try {
+    const allUser = await getAllUsers();
+    if (!allUser) throw new Error("no users!");
+    res.json({
+      allUser,
+    });
+  } catch (err) {
+    console.log(err);
+    res.json({
+      msg: err.message,
+    });
+  }
+};
+
 module.exports = {
   register,
   profile,
   setingsUpdate,
+  getAll,
 };
