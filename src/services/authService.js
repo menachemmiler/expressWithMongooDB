@@ -8,7 +8,7 @@ const loginUser = async (user) => {
     if (!dbUser) {
       throw new Error("User not found");
     }
-    if (!await bcrypt.compare(user.password, dbUser.password)) {
+    if (!(await bcrypt.compare(user.password, dbUser.password))) {
       throw new Error("Wrong password!!!");
     }
 
@@ -17,7 +17,7 @@ const loginUser = async (user) => {
         user_name: dbUser.user_name,
         role: dbUser.role,
       },
-      process.env.TOKEN_SECREAT, 
+      process.env.TOKEN_SECREAT,
       {
         expiresIn: "3m",
       }
@@ -26,11 +26,9 @@ const loginUser = async (user) => {
     return token;
   } catch (err) {
     console.log(err);
+    throw err;
   }
 };
-
-
-
 
 module.exports = {
   loginUser,

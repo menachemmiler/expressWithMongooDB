@@ -5,10 +5,13 @@ const login = async (req, res) => {
     const token = await loginUser(req.body);
     res.cookie("token", token);
     res.json({
-      msg: "welcome " + req.body.user_name + " " + req.body.password,
-      token: token,
+      msg: "welcome " + req.body.user_name + " token=" + token,
     });
-  } catch (err) {}
+  } catch (err) {
+    res.json({
+      msg: err.message,
+    });
+  }
 };
 
 const logout = async (req, res) => {
@@ -26,5 +29,5 @@ const logout = async (req, res) => {
 
 module.exports = {
   login,
-  logout
+  logout,
 };

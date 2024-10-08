@@ -7,7 +7,7 @@ const register = async (req, res) => {
       msg: "user created!",
     });
   } catch (err) {
-    res.status(400).json(err);
+    res.status(400).json({ msg: err.message });
   }
 };
 
