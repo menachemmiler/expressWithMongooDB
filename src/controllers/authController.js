@@ -6,11 +6,25 @@ const login = async (req, res) => {
     res.cookie("token", token);
     res.json({
       msg: "welcome " + req.body.user_name + " " + req.body.password,
-      token: token
+      token: token,
     });
   } catch (err) {}
 };
 
+const logout = async (req, res) => {
+  try {
+    res.cookie("token", "");
+    res.json({
+      msg: "הטוקן נמחק בהצלחה",
+    });
+  } catch (err) {
+    res.json({
+      msg: err.message,
+    });
+  }
+};
+
 module.exports = {
   login,
+  logout
 };
