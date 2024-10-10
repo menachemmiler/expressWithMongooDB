@@ -22,8 +22,9 @@ const onlySoldiersAndCommanders = async (req, res, next) => {
   try {
     const token = req.cookies.token;
     if (!token) {
-      res.status(403).send("Not allowed");
+      res.status(403).send("login before!");
     }
+
     const user = await jwt.verify(token, process.env.TOKEN_SECREAT); //חילוץ פרטי החייל מ-הטוקן שלו
 
     req.user = user;

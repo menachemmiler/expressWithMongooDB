@@ -33,7 +33,7 @@ router.post('/login', login);//התחברות של משתמש למערכת (יו
  *   delete:
  *     tags:
  *       - auth
- *     summary: login user
+ *     summary: logout user
  *     responses:
  *       200:
  *         description: Success message = הטוקן נמחק בהצלחה
